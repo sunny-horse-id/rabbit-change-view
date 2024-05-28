@@ -66,7 +66,7 @@ const onTapImage = (url: string) => {
   // 大图预览
   uni.previewImage({
     current: url,
-    urls: goods.value!.mainPictures,
+    urls: previewImages.value,
   })
 }
 
@@ -87,12 +87,14 @@ const openPopup = (name: typeof popupName.value) => {
 const isShowSku = ref(false)
 // 商品信息
 const localdata = ref({} as SkuPopupLocaldata)
+
 // 按钮模式
 enum SkuMode {
   Both = 1,
   Cart = 2,
   Buy = 3,
 }
+
 const mode = ref<SkuMode>(SkuMode.Cart)
 // 打开SKU弹窗修改按钮模式
 const openSkuPopup = (val: SkuMode) => {
@@ -117,6 +119,23 @@ const onAddCart = async (ev: SkuPopupEvent) => {
 const onBuyNow = (ev: SkuPopupEvent) => {
   uni.navigateTo({ url: `/pagesOrder/create/create?skuId=${ev._id}&count=${ev.buy_num}` })
 }
+
+// 静态物品轮播图
+const previewImages = ref([
+  'https://pic.imgdb.cn/item/6655e574d9c307b7e9080c8c.jpg',
+  'https://pic.imgdb.cn/item/6655e598d9c307b7e9083ab2.jpg',
+])
+// 静态详情图
+const detailImages = ref([
+  'https://pic.imgdb.cn/item/6655e800d9c307b7e90b6146.jpg',
+  'https://pic.imgdb.cn/item/6655e81dd9c307b7e90b903a.jpg',
+  'https://pic.imgdb.cn/item/6655e83ed9c307b7e90bc47d.jpg',
+  'https://pic.imgdb.cn/item/6655e858d9c307b7e90be8cf.jpg',
+  'https://pic.imgdb.cn/item/6655e866d9c307b7e90bfeae.jpg',
+  'https://pic.imgdb.cn/item/6655e87cd9c307b7e90c25cd.jpg',
+  'https://pic.imgdb.cn/item/6655e891d9c307b7e90c4c29.jpg',
+  'https://pic.imgdb.cn/item/6655e8aad9c307b7e90c7975.jpg',
+])
 </script>
 
 <template>
@@ -142,14 +161,14 @@ const onBuyNow = (ev: SkuPopupEvent) => {
       <!-- 商品主图 -->
       <view class="preview">
         <swiper @change="onChange" circular>
-          <swiper-item v-for="item in goods?.mainPictures" :key="item">
+          <swiper-item v-for="item in previewImages" :key="item">
             <image class="image" @tap="onTapImage(item)" mode="aspectFill" :src="item" />
           </swiper-item>
         </swiper>
         <view class="indicator">
           <text class="current">{{ currentIndex + 1 }}</text>
           <text class="split">/</text>
-          <text class="total">{{ goods?.mainPictures.length }}</text>
+          <text class="total">2</text>
         </view>
       </view>
 
@@ -157,25 +176,25 @@ const onBuyNow = (ev: SkuPopupEvent) => {
       <view class="meta">
         <view class="price">
           <text class="symbol">¥</text>
-          <text class="number">{{ goods?.price }}</text>
+          <text class="number">1999.00</text>
         </view>
-        <view class="name ellipsis">{{ goods?.name }}</view>
-        <view class="desc"> {{ goods?.desc }} </view>
+        <view class="name ellipsis">vivo iQOO Z9 Turbo</view>
+        <view class="desc"> iQOO全新系列，助你轻松玩转游戏</view>
       </view>
 
       <!-- 操作面板 -->
       <view class="action">
         <view @tap="openSkuPopup(SkuMode.Both)" class="item arrow">
           <text class="label">选择</text>
-          <text class="text ellipsis"> {{ selectArrText }} </text>
+          <text class="text ellipsis"> {{ selectArrText }}</text>
         </view>
         <view @tap="openPopup('address')" class="item arrow">
           <text class="label">送至</text>
-          <text class="text ellipsis"> 请选择收获地址 </text>
+          <text class="text ellipsis"> 请选择收获地址</text>
         </view>
         <view @tap="openPopup('service')" class="item arrow">
           <text class="label">服务</text>
-          <text class="text ellipsis"> 无忧退 快速退款 免费包邮 </text>
+          <text class="text ellipsis"> 无忧退 快速退款 免费包邮</text>
         </view>
       </view>
     </view>
@@ -188,15 +207,23 @@ const onBuyNow = (ev: SkuPopupEvent) => {
       <view class="content">
         <view class="properties">
           <!-- 属性详情 -->
-          <view class="item" v-for="item in goods?.details.properties" :key="item.name">
-            <text class="label">{{ item.name }}</text>
-            <text class="value">{{ item.value }}</text>
+          <!--          <view class="item" v-for="item in goods?.details.properties" :key="item.name">-->
+          <!--            <text class="label">{{ item.name }}</text>-->
+          <!--            <text class="value">{{ item.value }}</text>-->
+          <!--          </view>-->
+          <view class="item">
+            <text class="label">电池容量</text>
+            <text class="value">6000mAh</text>
+          </view>
+          <view class="item">
+            <text class="label">芯片</text>
+            <text class="value">第三代骁龙 8s</text>
           </view>
         </view>
         <!-- 图片详情 -->
         <image
           class="image"
-          v-for="item in goods?.details.pictures"
+          v-for="item in detailImages"
           :key="item"
           mode="widthFix"
           :src="item"
@@ -217,11 +244,15 @@ const onBuyNow = (ev: SkuPopupEvent) => {
           hover-class="none"
           :url="`/pages/goods/goods?id=${item.id}`"
         >
-          <image class="image" mode="aspectFill" :src="item.picture"></image>
-          <view class="name ellipsis">{{ item.name }}</view>
+          <image
+            class="image"
+            mode="aspectFill"
+            src="https://pic.imgdb.cn/item/665535d7d9c307b7e935829a.webp"
+          ></image>
+          <view class="name ellipsis">vivo iQOO Z9 Turbo</view>
           <view class="price">
             <text class="symbol">¥</text>
-            <text class="number">{{ item.price }}</text>
+            <text class="number">1999.00</text>
           </view>
         </navigator>
       </view>
@@ -231,19 +262,24 @@ const onBuyNow = (ev: SkuPopupEvent) => {
   <!-- 用户操作 -->
   <view v-if="goods" class="toolbar" :style="{ paddingBottom: safeAreaInsets?.bottom + 'px' }">
     <view class="icons">
-      <button class="icons-button"><text class="icon-heart"></text>收藏</button>
+      <button class="icons-button">
+        <text class="icon-heart"></text>
+        收藏
+      </button>
       <!-- #ifdef MP-WEIXIN -->
       <button class="icons-button" open-type="contact">
-        <text class="icon-handset"></text>客服
+        <text class="icon-handset"></text>
+        客服
       </button>
       <!-- #endif -->
       <navigator class="icons-button" url="/pages/cart/cart2" open-type="navigate">
-        <text class="icon-cart"></text>购物车
+        <text class="icon-cart"></text>
+        购物车
       </navigator>
     </view>
     <view class="buttons">
-      <view @tap="openSkuPopup(SkuMode.Cart)" class="addcart"> 加入购物车 </view>
-      <view @tap="openSkuPopup(SkuMode.Buy)" class="payment"> 立即购买 </view>
+      <view @tap="openSkuPopup(SkuMode.Cart)" class="addcart"> 加入购物车</view>
+      <view @tap="openSkuPopup(SkuMode.Buy)" class="payment"> 立即购买</view>
     </view>
   </view>
 
@@ -269,6 +305,7 @@ page {
 .panel {
   margin-top: 20rpx;
   background-color: #fff;
+
   .title {
     display: flex;
     justify-content: space-between;
@@ -277,6 +314,7 @@ page {
     line-height: 1;
     padding: 30rpx 60rpx 30rpx 6rpx;
     position: relative;
+
     text {
       padding-left: 10rpx;
       font-size: 28rpx;
@@ -284,6 +322,7 @@ page {
       font-weight: 600;
       border-left: 4rpx solid #2887bb;
     }
+
     navigator {
       font-size: 24rpx;
       color: #666;
@@ -307,13 +346,16 @@ page {
 /* 商品信息 */
 .goods {
   background-color: #fff;
+
   .preview {
     height: 750rpx;
     position: relative;
+
     .image {
       width: 750rpx;
       height: 750rpx;
     }
+
     .indicator {
       height: 40rpx;
       padding: 0 24rpx;
@@ -325,21 +367,26 @@ page {
       position: absolute;
       bottom: 30rpx;
       right: 30rpx;
+
       .current {
         font-size: 26rpx;
       }
+
       .split {
         font-size: 24rpx;
         margin: 0 1rpx 0 2rpx;
       }
+
       .total {
         font-size: 24rpx;
       }
     }
   }
+
   .meta {
     position: relative;
     border-bottom: 1rpx solid #eaeaea;
+
     .price {
       height: 130rpx;
       padding: 25rpx 30rpx 0;
@@ -348,9 +395,11 @@ page {
       box-sizing: border-box;
       background-color: #3595c8;
     }
+
     .number {
       font-size: 56rpx;
     }
+
     .brand {
       width: 160rpx;
       height: 80rpx;
@@ -359,6 +408,7 @@ page {
       top: 26rpx;
       right: 30rpx;
     }
+
     .name {
       max-height: 88rpx;
       line-height: 1.4;
@@ -366,6 +416,7 @@ page {
       font-size: 32rpx;
       color: #333;
     }
+
     .desc {
       line-height: 1;
       padding: 0 20rpx 30rpx;
@@ -373,8 +424,10 @@ page {
       color: #cf4444;
     }
   }
+
   .action {
     padding-left: 20rpx;
+
     .item {
       height: 90rpx;
       padding-right: 60rpx;
@@ -384,15 +437,18 @@ page {
       position: relative;
       display: flex;
       align-items: center;
+
       &:last-child {
         border-bottom: 0 none;
       }
     }
+
     .label {
       width: 60rpx;
       color: #898b94;
       margin: 0 16rpx 0 10rpx;
     }
+
     .text {
       flex: 1;
       -webkit-line-clamp: 1;
@@ -403,15 +459,19 @@ page {
 /* 商品详情 */
 .detail {
   padding-left: 20rpx;
+
   .content {
     margin-left: -20rpx;
+
     .image {
       width: 100%;
     }
   }
+
   .properties {
     padding: 0 20rpx;
     margin-bottom: 30rpx;
+
     .item {
       display: flex;
       line-height: 2;
@@ -420,9 +480,11 @@ page {
       color: #333;
       border-bottom: 1rpx dashed #ccc;
     }
+
     .label {
       width: 200rpx;
     }
+
     .value {
       flex: 1;
     }
@@ -436,6 +498,7 @@ page {
     background-color: #f4f4f4;
     display: flex;
     flex-wrap: wrap;
+
     .goods {
       width: 340rpx;
       padding: 24rpx 20rpx 20rpx;
@@ -443,26 +506,31 @@ page {
       border-radius: 10rpx;
       background-color: #fff;
     }
+
     .image {
       width: 300rpx;
       height: 260rpx;
     }
+
     .name {
       height: 80rpx;
       margin: 10rpx 0;
       font-size: 26rpx;
       color: #262626;
     }
+
     .price {
       line-height: 1;
       font-size: 20rpx;
       color: #cf4444;
     }
+
     .number {
       font-size: 26rpx;
       margin-left: 2rpx;
     }
   }
+
   navigator {
     &:nth-child(even) {
       margin-right: 0;
@@ -485,8 +553,10 @@ page {
   justify-content: space-between;
   align-items: center;
   box-sizing: content-box;
+
   .buttons {
     display: flex;
+
     & > view {
       width: 220rpx;
       text-align: center;
@@ -495,14 +565,17 @@ page {
       color: #fff;
       border-radius: 72rpx;
     }
+
     .addcart {
       background-color: #ffa868;
     }
+
     .payment {
       background-color: #2887bb;
       margin-left: 20rpx;
     }
   }
+
   .icons {
     padding-right: 20rpx;
     display: flex;
@@ -520,10 +593,12 @@ page {
       font-size: 20rpx;
       color: #333;
       background-color: #fff;
+
       &::after {
         border: none;
       }
     }
+
     text {
       display: block;
       font-size: 34rpx;

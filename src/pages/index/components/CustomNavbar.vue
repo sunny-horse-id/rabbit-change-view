@@ -11,7 +11,7 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
         class="logo-image"
         src="https://pic.imgdb.cn/item/665524abd9c307b7e9273f6b.png"
       ></image>
-      <text class="logo-text">新鲜 · 亲民 · 快捷</text>
+      <text class="logo-text">卖手机的不二之选</text>
     </view>
     <!-- 搜索条 -->
     <view class="search">
@@ -24,7 +24,7 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
 <style lang="scss">
 /* 自定义导航条 */
 .navbar {
-  background-image: url('https://pic.imgdb.cn/item/6655298fd9c307b7e92acee8.png');
+  background-image: url(https://pic.imgdb.cn/item/6655298fd9c307b7e92acee8.png);
   background-size: cover;
   position: relative;
   display: flex;

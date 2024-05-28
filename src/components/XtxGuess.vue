@@ -100,7 +100,7 @@ defineExpose({
       content: '';
       width: 20rpx;
       height: 20rpx;
-      background-image: url(@/static/images/bubble.png);
+      background-image: url(https://pic.imgdb.cn/item/665538ecd9c307b7e9385020.png);
       background-size: contain;
       margin: 0 10rpx;
     }

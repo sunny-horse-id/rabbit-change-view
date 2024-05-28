@@ -99,7 +99,7 @@ page {
 .viewport {
   height: 100%;
   background-repeat: no-repeat;
-  background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/center_bg.png);
+  background-image: url(https://pic.imgdb.cn/item/6655355cd9c307b7e935205c.png);
   background-size: 100% auto;
 }
 

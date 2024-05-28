@@ -16,11 +16,8 @@ defineProps<{
       v-for="item in list"
       :key="item.id"
     >
-      <image
-        class="icon"
-        src="https://consumer.huawei.com/etc/designs/huawei-cbg-site/clientlib-campaign-v4/common-v4/images/logo.svg"
-      ></image>
-      <text class="text">华为</text>
+      <image class="icon" :src="item.icon"></image>
+      <text class="text">{{ item.name }}</text>
     </navigator>
   </view>
 </template>

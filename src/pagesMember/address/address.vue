@@ -22,7 +22,7 @@ const onDeleteAddress = (id: string) => {
   // 二次确认
   uni.showModal({
     content: '删除地址?',
-    confirmColor: '#27BA9B',
+    confirmColor: '#2887bb',
     success: async (res) => {
       if (res.confirm) {
         // 根据id删除收货地址
@@ -161,9 +161,9 @@ page {
       padding: 4rpx 10rpx 2rpx 14rpx;
       margin: 2rpx 0 0 10rpx;
       font-size: 26rpx;
-      color: #27ba9b;
+      color: #2887bb;
       border-radius: 6rpx;
-      border: 1rpx solid #27ba9b;
+      border: 1rpx solid #2887bb;
     }
   }
 
@@ -189,6 +189,6 @@ page {
   color: #fff;
   border-radius: 80rpx;
   font-size: 30rpx;
-  background-color: #27ba9b;
+  background-color: #2887bb;
 }
 </style>

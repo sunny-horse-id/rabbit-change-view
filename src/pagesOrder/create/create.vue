@@ -382,7 +382,7 @@ page {
     font-size: 26rpx;
     color: #fff;
     border-radius: 72rpx;
-    background-color: #27ba9b;
+    background-color: #2887bb;
   }
 
   .disabled {

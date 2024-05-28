@@ -45,7 +45,7 @@ const onDeleteCart = (skuId: string) => {
   // 弹窗二次确认
   uni.showModal({
     content: '是否删除',
-    confirmColor: '#27BA9B',
+    confirmColor: '#2887bb',
     success: async (res) => {
       if (res.confirm) {
         // 后端删除单品
@@ -251,7 +251,7 @@ const { guessRef, onScrolltolower } = useGuessList()
       padding: 7rpx 15rpx 5rpx;
       border-radius: 4rpx;
       font-size: 24rpx;
-      background-color: #27ba9b;
+      background-color: #2887bb;
       margin-right: 10rpx;
     }
   }
@@ -288,7 +288,7 @@ const { guessRef, onScrolltolower } = useGuessList()
 
       &.checked::before {
         content: '\e6cc';
-        color: #27ba9b;
+        color: #2887bb;
       }
     }
 
@@ -416,7 +416,7 @@ const { guessRef, onScrolltolower } = useGuessList()
     font-size: 26rpx;
     border-radius: 60rpx;
     color: #fff;
-    background-color: #27ba9b;
+    background-color: #2887bb;
   }
 }
 
@@ -454,7 +454,7 @@ const { guessRef, onScrolltolower } = useGuessList()
 
   .checked::before {
     content: '\e6cc';
-    color: #27ba9b;
+    color: #2887bb;
   }
 
   .text {
@@ -494,7 +494,7 @@ const { guessRef, onScrolltolower } = useGuessList()
     }
 
     .payment-button {
-      background-color: #27ba9b;
+      background-color: #2887bb;
 
       &.disabled {
         opacity: 0.6;

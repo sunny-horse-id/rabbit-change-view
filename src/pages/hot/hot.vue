@@ -172,7 +172,7 @@ page {
       width: 40rpx;
       height: 4rpx;
       transform: translate(-50%);
-      background-color: #27ba9b;
+      background-color: #2887bb;
       position: absolute;
       left: 50%;
       bottom: 24rpx;

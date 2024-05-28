@@ -173,7 +173,7 @@ const onCityChange: UniHelper.UniDataPickerOnChange = (ev) => {
         <switch
           @change="onSwitchChange"
           class="switch"
-          color="#27ba9b"
+          color="#2887bb"
           :checked="form.isDefault === 1"
         />
       </view>
@@ -258,6 +258,6 @@ page {
   color: #fff;
   border-radius: 80rpx;
   font-size: 30rpx;
-  background-color: #27ba9b;
+  background-color: #2887bb;
 }
 </style>

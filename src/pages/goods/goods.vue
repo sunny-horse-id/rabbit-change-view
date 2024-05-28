@@ -126,11 +126,11 @@ const onBuyNow = (ev: SkuPopupEvent) => {
     :localdata="localdata"
     :mode="mode"
     add-cart-background-color="#FFA868"
-    buy-now-background-color="#27BA9B"
+    buy-now-background-color="#2887bb"
     ref="skuPopupRef"
     :actived-style="{
-      color: '#27BA9B',
-      borderColor: '#27BA9B',
+      color: '#2887bb',
+      borderColor: '#2887bb',
       backgroundColor: '#E9F8F5',
     }"
     @add-cart="onAddCart"
@@ -282,7 +282,7 @@ page {
       font-size: 28rpx;
       color: #333;
       font-weight: 600;
-      border-left: 4rpx solid #27ba9b;
+      border-left: 4rpx solid #2887bb;
     }
     navigator {
       font-size: 24rpx;
@@ -499,7 +499,7 @@ page {
       background-color: #ffa868;
     }
     .payment {
-      background-color: #27ba9b;
+      background-color: #2887bb;
       margin-left: 20rpx;
     }
   }

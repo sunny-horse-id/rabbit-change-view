@@ -151,7 +151,7 @@ const onOrderConfirm = () => {
   // 二次确认弹窗
   uni.showModal({
     content: '为保障您的权益，请收到货并确认无误后，再确认收货',
-    confirmColor: '#27BA9B',
+    confirmColor: '#2887bb',
     success: async (success) => {
       if (success.confirm) {
         const res = await putMemberOrderReceiptByIdAPI(query.id)
@@ -166,7 +166,7 @@ const onOrderDelete = () => {
   // 二次确认
   uni.showModal({
     content: '是否删除订单',
-    confirmColor: '#27BA9B',
+    confirmColor: '#2887bb',
     success: async (success) => {
       if (success.confirm) {
         await deleteMemberOrderAPI({ ids: [query.id] })
@@ -494,7 +494,7 @@ page {
     text-align: center;
     line-height: 64rpx;
     font-size: 28rpx;
-    color: #27ba9b;
+    color: #2887bb;
     border-radius: 68rpx;
     background-color: #fff;
   }
@@ -646,8 +646,8 @@ page {
       }
 
       .primary {
-        color: #27ba9b;
-        border-color: #27ba9b;
+        color: #2887bb;
+        border-color: #2887bb;
       }
     }
   }
@@ -758,14 +758,14 @@ page {
 
   .secondary {
     order: 2;
-    color: #27ba9b;
-    border-color: #27ba9b;
+    color: #2887bb;
+    border-color: #2887bb;
   }
 
   .primary {
     order: 1;
     color: #fff;
-    background-color: #27ba9b;
+    background-color: #2887bb;
   }
 }
 
@@ -807,7 +807,7 @@ page {
     .icon.checked::before {
       content: '\e6cc';
       font-size: 38rpx;
-      color: #27ba9b;
+      color: #2887bb;
     }
   }
 
@@ -831,7 +831,7 @@ page {
 
     .primary {
       color: #fff;
-      background-color: #27ba9b;
+      background-color: #2887bb;
       border: none;
     }
   }

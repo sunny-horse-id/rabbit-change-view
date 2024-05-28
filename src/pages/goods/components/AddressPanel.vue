@@ -79,7 +79,7 @@
     right: 0;
   }
   .icon-checked {
-    color: #27ba9b;
+    color: #2887bb;
   }
   .icon-ring {
     color: #444;
@@ -114,7 +114,7 @@
 
   .primary {
     color: #fff;
-    background-color: #27ba9b;
+    background-color: #2887bb;
   }
 
   .secondary {

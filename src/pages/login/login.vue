@@ -59,7 +59,7 @@ const onSubmit = async () => {
   <view class="viewport">
     <view class="logo">
       <image
-        src="https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/logo_icon.png"
+        src="https://files.superbed.cn/store/images/3f/6b/665524abd9c307b7e9273f6b.png"
       ></image>
     </view>
     <view class="login">
@@ -88,7 +88,7 @@ const onSubmit = async () => {
           </button>
         </view>
       </view>
-      <view class="tips">登录/注册即视为你同意《服务条款》和《小兔鲜儿隐私协议》</view>
+      <view class="tips">登录/注册即视为你同意《服务条款》和《隐私协议》</view>
     </view>
   </view>
 </template>
@@ -147,7 +147,8 @@ page {
   }
 
   .phone {
-    background-color: #28bb9c;
+    // background-color: #28bb9c;
+    background-color: #2887bb;
   }
 
   .wechat {

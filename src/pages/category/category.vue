@@ -34,6 +34,9 @@ onLoad(async () => {
 const subCategoryList = computed(() => {
   return categoryList.value[activeIndex.value]?.children || []
 })
+
+// 静态手机品牌
+const names = ref(['华为', '小米', 'OPPO', 'vivo'])
 </script>
 
 <template>
@@ -41,7 +44,7 @@ const subCategoryList = computed(() => {
     <!-- 搜索框 -->
     <view class="search">
       <view class="input">
-        <text class="icon-search">女靴</text>
+        <text class="icon-search">vivo</text>
       </view>
     </view>
     <!-- 分类 -->
@@ -49,14 +52,14 @@ const subCategoryList = computed(() => {
       <!-- 左侧：一级分类 -->
       <scroll-view class="primary" scroll-y>
         <view
-          v-for="(item, index) in categoryList"
-          :key="item.id"
+          v-for="(item, index) in names"
+          :key="index"
           class="item"
           :class="{ active: index === activeIndex }"
           @tap="activeIndex = index"
         >
           <text class="name">
-            {{ item.name }}
+            {{ item }}
           </text>
         </view>
       </scroll-view>
@@ -67,7 +70,7 @@ const subCategoryList = computed(() => {
         <!-- 内容区域 -->
         <view class="panel" v-for="item in subCategoryList" :key="item.id">
           <view class="title">
-            <text class="name">{{ item.name }}</text>
+            <text class="name">Z系列</text>
             <navigator class="more" hover-class="none">全部</navigator>
           </view>
           <view class="section">
@@ -78,11 +81,14 @@ const subCategoryList = computed(() => {
               hover-class="none"
               :url="`/pages/goods/goods?id=${goods.id}`"
             >
-              <image class="image" :src="goods.picture"></image>
-              <view class="name ellipsis">{{ goods.name }}</view>
+              <image
+                class="image"
+                src="https://pic.imgdb.cn/item/665535d7d9c307b7e935829a.webp"
+              ></image>
+              <view class="name ellipsis">vivo iQOO Z9 Turbo</view>
               <view class="price">
                 <text class="symbol">¥</text>
-                <text class="number">{{ goods.price }}</text>
+                <text class="number">1999.00</text>
               </view>
             </navigator>
           </view>

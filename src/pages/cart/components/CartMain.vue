@@ -401,7 +401,7 @@ const { guessRef, onScrolltolower } = useGuessList()
   height: 60vh;
   .image {
     width: 400rpx;
-    height: 281rpx;
+    height: 400rpx;
   }
   .text {
     color: #444;

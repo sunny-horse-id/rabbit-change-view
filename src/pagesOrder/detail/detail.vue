@@ -457,7 +457,7 @@ page {
   line-height: 1;
   padding-bottom: 30rpx;
   color: #fff;
-  background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/order_bg.png);
+  background-image: url(https://pic.imgdb.cn/item/665585e6d9c307b7e996dec7.png);
   background-size: cover;
 
   .status {
@@ -517,7 +517,7 @@ page {
   }
 
   .locate {
-    background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/locate.png);
+    background-image: url(https://pic.imgdb.cn/item/66558547d9c307b7e99632db.png);
 
     .user {
       font-size: 26rpx;
@@ -531,7 +531,7 @@ page {
   }
 
   .item {
-    background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/car.png);
+    background-image: url(https://pic.imgdb.cn/item/665587f6d9c307b7e9991628.png);
     border-bottom: 1rpx solid #eee;
     position: relative;
 

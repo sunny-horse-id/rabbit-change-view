@@ -207,7 +207,7 @@ page {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/order_bg.png);
+  background-image: url(https://pic.imgdb.cn/item/665585e6d9c307b7e996dec7.png);
   background-size: auto 420rpx;
   background-repeat: no-repeat;
 }

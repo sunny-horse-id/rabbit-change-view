@@ -67,7 +67,7 @@
     background-size: 40rpx;
     background-repeat: no-repeat;
     background-position: 0 center;
-    background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/locate.png);
+    background-image: url(https://pic.imgdb.cn/item/66558547d9c307b7e99632db.png);
     position: relative;
   }
   .icon {

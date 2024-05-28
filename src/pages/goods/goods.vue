@@ -346,7 +346,7 @@ page {
       color: #fff;
       font-size: 34rpx;
       box-sizing: border-box;
-      background-color: #35c8a9;
+      background-color: #3595c8;
     }
     .number {
       font-size: 56rpx;

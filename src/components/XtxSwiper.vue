@@ -17,23 +17,57 @@ defineProps<{
 <template>
   <view class="carousel">
     <swiper :circular="true" :autoplay="false" :interval="3000" @change="onChange">
-      <swiper-item v-for="item in list" :key="item.id">
+      <swiper-item>
         <navigator url="/pages/index/index" hover-class="none" class="navigator">
-          <image mode="aspectFill" class="image" :src="item.imgUrl"></image>
+          <image
+            mode="aspectFill"
+            class="image"
+            src="https://pic.imgdb.cn/item/66553157d9c307b7e931c842.jpg"
+          ></image>
+        </navigator>
+      </swiper-item>
+      <swiper-item>
+        <navigator url="/pages/index/index" hover-class="none" class="navigator">
+          <image
+            mode="aspectFill"
+            class="image"
+            src="https://pic.imgdb.cn/item/66553150d9c307b7e931c349.jpg"
+          ></image>
         </navigator>
       </swiper-item>
     </swiper>
     <!-- 指示点 -->
     <view class="indicator">
       <text
-        v-for="(item, index) in list"
-        :key="item.id"
+        v-for="(item, index) in 2"
+        :key="item"
         class="dot"
         :class="{ active: index === activeIndex }"
       ></text>
     </view>
   </view>
 </template>
+
+<!--<template>-->
+<!--  <view class="carousel">-->
+<!--    <swiper :circular="true" :autoplay="false" :interval="3000" @change="onChange">-->
+<!--      <swiper-item v-for="item in list" :key="item.id">-->
+<!--        <navigator url="/pages/index/index" hover-class="none" class="navigator">-->
+<!--          <image mode="aspectFill" class="image" :src="item.imgUrl"></image>-->
+<!--        </navigator>-->
+<!--      </swiper-item>-->
+<!--    </swiper>-->
+<!--    &lt;!&ndash; 指示点 &ndash;&gt;-->
+<!--    <view class="indicator">-->
+<!--      <text-->
+<!--        v-for="(item, index) in list"-->
+<!--        :key="item.id"-->
+<!--        class="dot"-->
+<!--        :class="{ active: index === activeIndex }"-->
+<!--      ></text>-->
+<!--    </view>-->
+<!--  </view>-->
+<!--</template>-->
 
 <style lang="scss">
 @import './styles/XtxSwiper.scss';

@@ -7,7 +7,10 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
   <view class="navbar" :style="{ paddingTop: safeAreaInsets!.top + 10 + 'px' }">
     <!-- logo文字 -->
     <view class="logo">
-      <image class="logo-image" src="@/static/images/logo.png"></image>
+      <image
+        class="logo-image"
+        src="https://pic.imgdb.cn/item/665524abd9c307b7e9273f6b.png"
+      ></image>
       <text class="logo-text">新鲜 · 亲民 · 快捷</text>
     </view>
     <!-- 搜索条 -->
@@ -21,7 +24,7 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
 <style lang="scss">
 /* 自定义导航条 */
 .navbar {
-  background-image: url(@/static/images/navigator_bg.png);
+  background-image: url('https://pic.imgdb.cn/item/6655298fd9c307b7e92acee8.png');
   background-size: cover;
   position: relative;
   display: flex;
@@ -33,8 +36,8 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
     height: 64rpx;
     padding-left: 30rpx;
     .logo-image {
-      width: 166rpx;
-      height: 39rpx;
+      width: 65rpx;
+      height: 65rpx;
     }
     .logo-text {
       flex: 1;

@@ -60,11 +60,15 @@ defineExpose({
       :key="item.id"
       :url="`/pages/goods/goods?id=${item.id}`"
     >
-      <image class="image" mode="aspectFill" :src="item.picture"></image>
-      <view class="name"> {{ item.name }} </view>
+      <image
+        class="image"
+        mode="aspectFill"
+        src="https://pic.imgdb.cn/item/665535d7d9c307b7e935829a.webp"
+      ></image>
+      <view class="name"> vivo iQOO Z9 Turbo </view>
       <view class="price">
         <text class="small">¥</text>
-        <text>{{ item.price }}</text>
+        <text>1999.00</text>
       </view>
     </navigator>
   </view>

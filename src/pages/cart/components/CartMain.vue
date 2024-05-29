@@ -148,11 +148,17 @@ const { guessRef, onScrolltolower } = useGuessList()
                 hover-class="none"
                 class="navigator"
               >
-                <image mode="aspectFill" class="picture" :src="item.picture"></image>
+                <image
+                  mode="aspectFill"
+                  class="picture"
+                  src="https://pic.imgdb.cn/item/665535d7d9c307b7e935829a.webp"
+                ></image>
+                <!--                <image mode="aspectFill" class="picture" :src="item.picture"></image>-->
                 <view class="meta">
-                  <view class="name ellipsis">{{ item.name }}</view>
-                  <view class="attrsText ellipsis">{{ item.attrsText }}</view>
-                  <view class="price">{{ item.nowPrice }}</view>
+                  <view class="name ellipsis">vivo iQOO Z9 Turbo</view>
+                  <!--                  <view class="attrsText ellipsis">{{ item.attrsText }}</view>-->
+                  <view class="attrsText ellipsis">16G+1TB</view>
+                  <view class="price">1999.00</view>
                 </view>
               </navigator>
               <!-- 商品数量 -->

@@ -22,7 +22,7 @@
             <view class="specification-left">
               <image
                 class="product-img"
-                :src="selectShop.image ? selectShop.image : goodsInfo[goodsThumbName]"
+                src="https://pic.imgdb.cn/item/665535d7d9c307b7e935829a.webp"
                 :style="{ backgroundColor: goodsThumbBackgroundColor }"
                 mode="aspectFill"
                 @click="previewImage"
@@ -31,9 +31,10 @@
             <view class="specification-right">
               <view class="price-content" :style="{ color: themeColorFn('priceColor') }">
                 <text class="sign">¥</text>
-                <text class="price" :class="priceCom.length > 16 ? 'price2' : ''">{{
-                  priceCom
-                }}</text>
+                <!--                <text class="price" :class="priceCom.length > 16 ? 'price2' : ''">{{-->
+                <!--                  priceCom-->
+                <!--                }}</text>-->
+                <text class="price" :class="priceCom.length > 16 ? 'price2' : ''">1999.00</text>
               </view>
               <view class="inventory" v-if="!hideStock">{{ stockText }}：{{ stockCom }}</view>
               <view class="inventory" v-else></view>
@@ -48,6 +49,7 @@
               v-for="(item, index1) in goodsInfo[specListName]"
               :key="index1"
             >
+              <!--              <view class="item-title">{{ item.name }}</view>-->
               <view class="item-title">{{ item.name }}</view>
               <view class="item-wrapper">
                 <view
